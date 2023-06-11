@@ -45,11 +45,11 @@ function createInvoiceQr($saler, $vatNumber, $dateTime, $totalWithVat, $vat)
 
 
     /// Conver Values To Hex
-    // $saler = bin2hex($saler);
-    // $vatNumber = bin2hex($vatNumber);
-    // $dateTime = bin2hex($dateTime);
-    // $totalWithVat = bin2hex($totalWithVat);
-    // $vat = bin2hex($vat);
+    $saler = bin2hex($saler);
+    $vatNumber = bin2hex($vatNumber);
+    $dateTime = bin2hex($dateTime);
+    $totalWithVat = bin2hex($totalWithVat);
+    $vat = bin2hex($vat);
 
     $result = "01" . $salerLens . $saler . "02" . $vatNumberLens . $vatNumber . "03" . $dateTimeLens . $dateTime . "04" . $totalWithVatLens . $totalWithVat . "05" . $vatLens . $vat;
 
@@ -58,5 +58,5 @@ function createInvoiceQr($saler, $vatNumber, $dateTime, $totalWithVat, $vat)
 
 $result = createInvoiceQr("tawreed tech", 310518806900003, "2023-06-10T18:30:00", 1150, 150);
 
-echo $result;
+
 echo QRcode::png($result, false, QR_ECLEVEL_L, 10);
