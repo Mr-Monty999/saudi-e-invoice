@@ -14,7 +14,7 @@ function createInvoiceQr($saler, $vatNumber, $dateTime, $totalWithVat, $vat)
     $vatLens = strlen($vat);
 
 
-    ////Covnert Lens To Hexdecimal
+    /// Covnert Lens To Hexdecimal
     $salerLens = dechex($salerLens);
     $vatNumberLens = dechex($vatNumberLens);
     $dateTimeLens = dechex($dateTimeLens);
@@ -22,7 +22,7 @@ function createInvoiceQr($saler, $vatNumber, $dateTime, $totalWithVat, $vat)
     $vatLens = dechex($vatLens);
 
 
-    // /ADd 0 if Lens Is one digit
+    /// Add 0 if Lens Is one digit
     if (strlen($salerLens) < 2)
         $salerLens = "0" . $salerLens;
 
@@ -44,7 +44,7 @@ function createInvoiceQr($saler, $vatNumber, $dateTime, $totalWithVat, $vat)
 
 
 
-    /// Conver Values To Hex
+    /// Convert Values To Hex
     $saler = bin2hex($saler);
     $vatNumber = bin2hex($vatNumber);
     $dateTime = bin2hex($dateTime);
